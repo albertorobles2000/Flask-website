@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+<h2>Bienvenido {{usuario}}</h2>
+<p>Que bien que estes de vuelta, navega por nuestra pagina con toda libertad</p>
+<i><h4>Datos de usuario:</h4></i>
+<lu>
+    <li><b>Correo Electronico:</b> {{mail}}</li>
+    <li><b>Nombre:</b> {{user}}</li>
+    <li><b>Movil:</b> {{phone}}</li>
+    <li><b>Direccion:</b> {{direction}}</li>
+</lu>
+<p><br>Respecto a su perfil puede realizar alguna de las siguiente opciones:</p>
+<a href="/datachange">
+    <button class="btn btn-outline-dark btn-lg px-4" type="submit" value="submit">Modificar datos</button>
+</a>
+<a href="/logout">
+    <button class="btn btn-outline-dark btn-lg px-4" type="submit" value="submit">Log out</button>
+</a>
+         
+{% endblock %}
