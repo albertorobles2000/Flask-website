@@ -7,13 +7,23 @@ def usuarioCorrecto(userMail,userPasswd):
     correcto = False
     #Nos traemos los datos del usuario de la BD
     data = db.get(userMail)
-    if(data is not None and data[1]==userPasswd):
+    if(data is not None and data[1]==hash(userPasswd)):
         correcto = True
     return correcto
 
 def eliminaUsuario(userMail):
+    listaCorreos = list(db)
+    listaData = []
+    for i in listaCorreos:
+        listaData.append(db[i])
+    
+    indice = listaCorreos.index(userMail)
+    del listaCorreos[indice]
+    del listaData[indice]
+    listaCorreos
     db.clear()
-
+    for i in range(len(listaCorreos)):
+        db[listaCorreos[i]] = listaData[i]
 
 
 def registrarNuevoUsuario(userName,userMail,userPasswd,rePasswd,phone,direccion):
@@ -21,7 +31,7 @@ def registrarNuevoUsuario(userName,userMail,userPasswd,rePasswd,phone,direccion)
     data = db.get(userMail)
     if(data is None and userPasswd==rePasswd):
         insercion = True
-        db[userMail] = [userName,userPasswd,phone,direccion]
+        db[userMail] = [userName,hash(userPasswd),phone,direccion]
     return insercion
 
 def getNameUser(userMail):

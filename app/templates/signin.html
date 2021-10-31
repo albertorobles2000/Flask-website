@@ -7,6 +7,7 @@
           <div class="login-form bg-light mt-4 p-4">
               <form action="#" method="post" class="row g-3">
                   <h4>Sign In</h4>
+                  
                   <div class="col-12">
                       <label>Correo electronico</label>
                       <input type="text" name="email" class="form-control" placeholder="Username">
@@ -34,6 +35,13 @@
                   <div class="col-12">
                       <button type="submit" class="btn btn-dark float-end">Sign In</button>
                   </div>
+                  {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                          <p style="color:red;">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                  {% endwith %}
               </form>
               <hr class="mt-4">
               <div class="col-12">

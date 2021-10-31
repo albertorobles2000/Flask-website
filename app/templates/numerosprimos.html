@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+<h2>Números primos</h2>
+<div class="col-md-6 offset-md-0">
+    <form action="" method="post" class="row g-3">
+        <div class="col-12">
+            <p>Introduzca un numero entero</p>
+            <label><b>Numero:</b></label>
+            <input type="text" name="numero" class="form-control">
+        </div>
+        <a href="#">
+            <button class="btn btn-outline-dark btn-lg px-4" type="submit" value="submit">Calcular Primos</button>
+        </a>
+        {% if vectorPrimos: %}
+            <p>{{vectorPrimos}}</p>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

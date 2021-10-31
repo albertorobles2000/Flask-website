@@ -1,0 +1,36 @@
+{% extends "padre.html" %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+<h2>Expresiones Regulares</h2>
+<div class="col-md-6 offset-md-0">
+    <form action="" method="post" class="row g-3">
+        <div class="col-12">
+            <p>
+                Introduzca el texto que estime conveniente, teniendo en cuenta que extraeremos: 
+                <ul>
+                    <li>Apellido XXXXX</li>
+                    <li>Direcciones de correo electronico validas</li>
+                    <li>Números de tarjetas de credito separadas por espacios o guiones</li>
+                </ul>
+            </p>
+            <label><b>Texto:</b></label>
+            <input type="text" name="texto" class="form-control">
+        </div>
+        <a href="#">
+            <button class="btn btn-outline-dark btn-lg px-4" type="submit" value="submit">Extraer informacion</button>
+        </a>
+        {% if apellidos: %}
+            <b>Apellidos:</b>
+            {{apellidos}}
+        {% endif %}
+        {% if correos: %}
+            <b>Correos:</b>
+            {{correos}}
+        {% endif %}
+        {% if tarjetas: %}
+            <b>Trajetas:</b>
+            {{tarjetas}}
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

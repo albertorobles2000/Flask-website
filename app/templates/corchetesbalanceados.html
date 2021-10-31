@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+<h2>Corchetes balanceados</h2>
+<div class="col-md-6 offset-md-0">
+    <form action="" method="post" class="row g-3">
+        <div class="col-12">
+            <p>Introduzca una secuencia de corchetes</p>
+            <label><b>Secuencia:</b></label>
+            <input type="text" name="secuenciaCorchetes" class="form-control" placeholder="[[][][[][]]]">
+        </div>
+        <a href="#">
+            <button class="btn btn-outline-dark btn-lg px-4" type="submit" value="submit">Comprobar secuencia</button>
+        </a>
+        {% if secuenciaCorrecta == "True": %} 
+            <p>La secuencia de corchetes es correcta</p>   
+        {% else %}
+        {% if secuenciaCorrecta == "False": %}
+            <p>La secuencia de corchetes es incorrecta</p>
+        {% endif %}
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

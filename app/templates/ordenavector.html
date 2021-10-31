@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+<h2>Ordena el vector</h2>
+<div class="col-md-6 offset-md-0">
+    <form action="" method="post" class="row g-3">
+        <div class="col-12">
+            <p>Introduzca el vector que desea ordenar separado por comas</p>
+            <label><b>Vector a ordenar:</b></label>
+            <input type="text" name="vector" class="form-control" placeholder="9,4,7,10">
+        </div>
+        <a href="#">
+            <button class="btn btn-outline-dark btn-lg px-4" type="submit" value="submit">Ordenar</button>
+        </a>
+        {% if vectorOrdenado: %}
+            <p>{{vectorOrdenado}}</p>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

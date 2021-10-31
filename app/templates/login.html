@@ -18,6 +18,13 @@
                   <div class="col-12">
                       <button type="submit" class="btn btn-dark float-end">Log in</button>
                   </div>
+                  {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                          <p style="color:red;">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                  {% endwith %}
               </form>
               <hr class="mt-4">
               <div class="col-12">
